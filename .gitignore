@@ -13,8 +13,8 @@
 *.a
 
 # Visual C++ stuff
-.suo
-.sdf
-.opensdf
-.lastbuilddate
-.log
+*.suo
+*.sdf
+*.opensdf
+*.lastbuilddate
+*.log

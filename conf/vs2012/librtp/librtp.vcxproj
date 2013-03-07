@@ -12,6 +12,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\code\include\librtp.h" />
+    <ClInclude Include="..\..\..\code\include\sockets.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\code\src\win32\sockets.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{D2ADF2DE-1DE3-4AF2-B76B-50231A6E34A6}</ProjectGuid>
