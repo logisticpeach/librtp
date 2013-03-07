@@ -1,0 +1,1 @@
+Directory that will contain project configuration files (Visual Studio solution/project files, MAKE files etc). A sensible sub-directory structure should be followed.
