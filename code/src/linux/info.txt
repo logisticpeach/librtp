@@ -1,0 +1,1 @@
+Directory containing code (.cpp and .h files) relating specifically to linux platform functionality.

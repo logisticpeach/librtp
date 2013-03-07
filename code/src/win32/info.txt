@@ -1,0 +1,1 @@
+Directory that contains code (.cpp and .h files) relating specifically to win32 platform functionality.
