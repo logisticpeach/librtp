@@ -11,3 +11,10 @@
 *.lai
 *.la
 *.a
+
+# Visual C++ stuff
+.suo
+.sdf
+.opensdf
+.lastbuilddate
+.log
