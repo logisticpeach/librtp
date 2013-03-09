@@ -3,7 +3,7 @@
 
 namespace sockets
 {
-
+	/*
 SocketBase::SocketBase()
 {
 	m_socket_handle = -1;
@@ -26,10 +26,5 @@ void SocketBase::CloseSocket()
 }
 
 
-
-}
-
-int main()
-{
-	return 0;
+*/
 }
