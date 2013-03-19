@@ -11,10 +11,12 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\code\include\buffers.h" />
     <ClInclude Include="..\..\..\code\include\librtp.h" />
     <ClInclude Include="..\..\..\code\include\sockets.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\code\src\buffers.cpp" />
     <ClCompile Include="..\..\..\code\src\win32\sockets.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
