@@ -45,7 +45,7 @@ namespace sockets
 	{
 		sockaddr_in sin;
 		sin.sin_family = AF_INET;
-		sin.sin_addr.S_un.S_addr = inet_addr(LIBRTP_MULTICAST_GROUP);
+		sin.sin_addr.S_un.S_addr = inet_addr(DEFAULT_MULTICAST_GROUP.c_str());
 		sin.sin_port = htons(port);
 		return sin;
 	}
@@ -58,7 +58,6 @@ namespace sockets
 		sin.sin_port = htons(port);
 		return sin;
 	}
-
 
 	SocketResult::SocketResult()
 	{
@@ -192,6 +191,25 @@ namespace sockets
 			return SocketResult(SocketResultType::PLATFORM_ERROR, status);
 
 		return SocketResult();
+	}
+
+	SocketResult DatagramSocket::JoinMulticastGroup(std::string group_address)
+	{
+		if (!m_socket_initialised)
+			return SocketResult(SocketResultType::PLATFORM_ERROR, ERR_INVALID_SOCKET);
+
+		ip_mreq multicast_address;
+		multicast_address.imr_multiaddr.S_un.S_addr = inet_addr(group_address.c_str());
+		multicast_address.imr_interface.S_un.S_addr = htonl(INADDR_ANY);
+
+		int val = setsockopt(m_socket_handle, IPPROTO_IP, IP_ADD_MEMBERSHIP, (char*)&multicast_address, sizeof(multicast_address));
+
+		if (val == 0)
+			return SocketResult();
+
+		val = WSAGetLastError();
+
+		return SocketResult(SocketResultType::NETWORK_ERROR, val);
 	}
 }
 

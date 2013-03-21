@@ -13,10 +13,9 @@
 #include <string>
 #include "buffers.h"
 
-#define LIBRTP_MULTICAST_GROUP "225.0.0.1"			// The IP Address of the multicast group we're broadcasting on...
-
 namespace sockets
 {
+	const std::string DEFAULT_MULTICAST_GROUP = "225.0.0.1";			// The IP Address of the multicast group we're broadcasting on...
 	const int ERR_INVALID_SOCKET = -1;
 	const int ERR_MSG_TOO_LARGE = -2;
 
@@ -198,6 +197,21 @@ namespace sockets
 		 * @return	A SocketResult containing the result of this operation
 		 **************************************************************************************************/
 		SocketResult SendTo(unsigned short port, buffers::Buffer data);
+
+		/**********************************************************************************************//**
+		 * @fn	SocketResult DatagramSocket::JoinMulticastGroup(std::string group_address);
+		 *
+		 * @brief	Join this socket to the specified multicast group for receiving datagrams
+		 *
+		 * @author	Kenny Baxter
+		 * @date	20/03/2013
+		 *
+		 * @param	group_address	an ANSI string representation of the class D IP address of the
+		 * 							desired multicast group.(See DEFAULT_MULTICAST_GROUP)
+		 *
+		 * @return	A SocketResult containing the result of this operation
+		 **************************************************************************************************/
+		SocketResult JoinMulticastGroup(std::string group_address);
 
 	private:
 

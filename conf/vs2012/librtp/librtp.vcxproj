@@ -13,6 +13,7 @@
   <ItemGroup>
     <ClInclude Include="..\..\..\code\include\buffers.h" />
     <ClInclude Include="..\..\..\code\include\librtp.h" />
+    <ClInclude Include="..\..\..\code\include\rtpmessages.h" />
     <ClInclude Include="..\..\..\code\include\sockets.h" />
   </ItemGroup>
   <ItemGroup>
